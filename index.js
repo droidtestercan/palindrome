@@ -24,14 +24,7 @@ function Phrase(content) {
     // For example:
     //   new Phrase("Hello, world!").letters() === "Helloworld"
     this.letters = function letters() {
-      const letterRegex = /[a-z]/i;
-      let theLetters = [];
-      Array.from(this.content).forEach(function(character) {
-        if (character.match(letterRegex)) {
-          theLetters.push(character);
-        }
-      });
-      return theLetters.join("");
+      return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
     }
 }
 
